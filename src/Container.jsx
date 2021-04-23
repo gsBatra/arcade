@@ -1,9 +1,20 @@
 import { useState, useCallback } from 'react';
 import { Card } from './Card';
 import update from 'immutability-helper';
+import img_1 from './sliding/1.jpg';
+import img_2 from './sliding/2.jpg';
+import img_3 from './sliding/3.jpg';
+import img_4 from './sliding/4.jpg';
+import img_5 from './sliding/5.jpg';
+import img_6 from './sliding/6.jpg';
+import img_7 from './sliding/7.jpg';
+import img_8 from './sliding/8.jpg';
+import img_9 from './sliding/9.jpg';
+
 const style = {
-    float: 'right',
-    width: 500,
+    display: 'grid',
+    'grid-template-columns': 'repeat(3, 150px)',
+    'grid-gap': '0px',
 };
 
 export const Container = () => {
@@ -11,31 +22,39 @@ export const Container = () => {
         const [cards, setCards] = useState([
             {
                 id: 1,
-                text: 'Write a cool JS library',
+                img: img_1,
             },
             {
                 id: 2,
-                text: 'Make it generic enough',
+                img: img_2,
             },
             {
                 id: 3,
-                text: 'Write README',
+                img: img_3,
             },
             {
                 id: 4,
-                text: 'Create some examples',
+                img: img_4,
             },
             {
                 id: 5,
-                text: 'Spam in Twitter and IRC to promote it (note that this element is taller than the others)',
+                img: img_5,
             },
             {
                 id: 6,
-                text: '???',
+                img: img_6,
             },
             {
                 id: 7,
-                text: 'PROFIT',
+                img: img_7,
+            },
+            {
+                id: 8,
+                img: img_8,
+            },
+            {
+                id: 9,
+                img: img_9,
             },
         ]);
         const moveCard = useCallback((dragIndex, hoverIndex) => {
@@ -48,7 +67,7 @@ export const Container = () => {
             }));
         }, [cards]);
         const renderCard = (card, index) => {
-            return (<Card key={card.id} index={index} id={card.id} text={card.text} moveCard={moveCard}/>);
+            return (<Card key={card.id} index={index} id={card.id} img={card.img} moveCard={moveCard}/>);
         };
         return (<>
             <div className={'picture'} style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
