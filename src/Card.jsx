@@ -8,6 +8,10 @@ const style = {
     backgroundColor: 'white',
     cursor: 'move',
 };
+
+//
+// Edited example from https://github.com/react-dnd/react-dnd/tree/gh-pages/examples_hooks_js/04-sortable/simple
+
 export const Card = ({ id, img, index, moveCard }) => {
     const ref = useRef(null);
     const [{ handlerId }, drop] = useDrop({

@@ -17,6 +17,9 @@ const style = {
     'grid-gap': '0px',
 };
 
+//
+// Edited example from https://github.com/react-dnd/react-dnd/tree/gh-pages/examples_hooks_js/04-sortable/simple
+
 export const Container = () => {
     {
         const [cards, setCards] = useState([
